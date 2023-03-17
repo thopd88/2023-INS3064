@@ -1,11 +1,11 @@
-<?php # Script 9.6 - view_users.php #2
+<?php # view_users.php
 // This script retrieves all the records from the users table.
 
 $page_title = 'View the Current Users';
 include('includes/header.html');
 
 // Page header:
-echo '<h1>Registered Users</h1>';
+// echo '<h1>Registered Users</h1>';
 
 require('includes/mysqli_connect.php');
 // Connect to the db.
@@ -23,15 +23,20 @@ if ($num > 0) { // If it ran OK, display the records.
     echo "<p>There are currently $num  registered users.</p>\n";
 
     // Table header.
-    echo '<table align="center"cellspacing="3" cellpadding="3"width="75%">
-	 	 <tr><td align="left"><b>Name</b></td><td align="left"><b>Date Registered</b></td></tr>	 ';
+    echo '<table align="center"cellspacing="3" cellpadding="3"width="75%" class="table table-bordered">
+	 	 <tr><td align="left"><b>Name</b></td>
+         <td align="left"><b>Date Registered</b></td>
+         </tr>';
 
     // Fetch and print all the records:
     while ($row = mysqli_fetch_array(
         $r,
         MYSQLI_ASSOC
     )) {
-        echo '<tr><td align="left">' . $row['name'] . '</td><td align=	"left">' . $row['dr'] . '</td></tr>';
+        echo '<tr>
+        <td align="left">' . $row['name'] . '</td>
+        <td align="left">' . $row['dr'] . '</td>
+        </tr>';
     }
     echo '</table>'; // Close the table.
 
@@ -39,8 +44,7 @@ if ($num > 0) { // If it ran OK, display the records.
 
 } else { // If no records were returned.
 
-    echo '<p class="error">There are 
- currently no registered users.</p>';
+    echo '<p class="error">There are currently no registered users.</p>';
 }
 
 mysqli_close($dbc); // Close the database connection.

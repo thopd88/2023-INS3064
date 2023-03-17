@@ -13,7 +13,6 @@ include('includes/header.html');
 // create_ad();
 ?>
 
-<div class="page-header"><h1>Content Header</h1></div>
 <p>This is where the page-specific content goes. This section, and the corresponding header, will change from one page to the next.</p>
 <p>This is where the page-specific content goes. This section, and the corresponding header, will change from one page to the next.</p>
 <?php

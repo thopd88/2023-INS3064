@@ -84,7 +84,6 @@ any inconvenience.</p>';
     mysqli_close($dbc); // Close the database connection.
 } // End of the main Submit conditional.
 ?>
-<h1>Register</h1>
 <form action="register.php" method="post">
     <p>First Name: <input type="text" name="first_name" size="15" maxlength="20" value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>" /></p>
     <p>Last Name: <input type="text" name="last_name" size="15" maxlength="40" value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>" /></p>
