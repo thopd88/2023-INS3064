@@ -18,6 +18,6 @@ include('includes/header.html');
 <?php
 // Call the function again:
 // create_ad();
-
+ 
 include('includes/footer.html');
 ?>
